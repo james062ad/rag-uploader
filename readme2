@@ -1,0 +1,96 @@
+# 📤 RAG Uploader: Document Ingestion for Semantic Search
+
+This tool lets users upload `.txt` and `.pdf` documents into a Retrieval-Augmented Generation (RAG) pipeline. Documents are chunked, embedded using OpenAI, and stored in a vector database (Supabase + pgvector). Uploads are logged to Comet for traceability.
+
+---
+
+## 🧠 What This App Does
+
+- 📄 Upload `.txt` or `.pdf` files via Streamlit UI
+- 🔪 Automatically chunk documents into sections
+- 🧠 Embed each chunk using OpenAI (text-embedding-ada-002)
+- ☁️ Insert chunks + embeddings into Supabase (pgvector)
+- 📊 Log upload activity to Comet (Opik)
+- 📈 Show real-time progress bar
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Tech                          |
+|--------------|-------------------------------|
+| Frontend     | Streamlit                     |
+| Backend      | Python + OpenAI SDK           |
+| Vector DB    | Supabase + pgvector           |
+| Upload Log   | Comet (Opik)                  |
+| Deployment   | Streamlit Cloud (optional)    |
+| Secrets      | `.env` + `python-dotenv`      |
+
+---
+
+## 🔐 Environment Setup
+
+Create a `.env` file with the following:
+
+```env
+OPENAI_API_KEY=sk-...
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_KEY=your-supabase-anon-key
+COMET_API_KEY=your-comet-api-key
+COMET_WORKSPACE=your-comet-workspace-name
+COMET_PROJECT_NAME=rag-uploader
+```
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/james062ad/rag-uploader.git
+cd rag-uploader
+pip install -r requirements.txt
+```
+
+> Also install PyMuPDF:
+```bash
+pip install PyMuPDF
+```
+
+---
+
+## 🚀 Run the App
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 📤 Features
+
+- ✅ Upload `.txt` and `.pdf`
+- ✅ Adjustable chunk size (default 500 chars)
+- ✅ Real-time Streamlit progress bar
+- ✅ Uploads tracked in Comet
+- ✅ Scales with your vector DB
+
+---
+
+## 📊 Comet Logging
+
+Each upload is tracked as a unique Comet experiment:
+
+```
+Upload: report.pdf (442 chunks)
+```
+
+✅ Logged:
+- File name
+- Number of chunks
+- First chunk preview
+
+Dashboard: [https://www.comet.com/james1962/rag-project](https://www.comet.com/james1962/rag-project)
+
+---
+
+## 📂
