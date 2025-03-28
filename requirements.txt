@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+requests
+openai
+pandas
+psycopg2-binary
+sqlalchemy
+sentence-transformers
+streamlit
+python-dotenv
