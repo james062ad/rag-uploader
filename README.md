@@ -99,6 +99,6 @@ rag-project/
 
 ✅ `.env` and `venv/` are safely excluded from GitHub
 
----
+
 
 ## 🧠 Built by Geoffrey | March 2025
