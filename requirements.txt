@@ -9,3 +9,4 @@ sentence-transformers
 streamlit
 python-dotenv
 comet_ml
+supabase
